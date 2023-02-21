@@ -6,7 +6,7 @@ Posts
 <div class="posts_form_wrap">
     <div class="posts_form_left">
         <div class="heading">
-            <h2>Posts</h2>
+            <h1>Posts</h1>
         </div>
         <form action="" id="save_post_form">
             @csrf
@@ -102,6 +102,12 @@ Posts
                 <td><button class="remove_post" data-id="${post_id_val}">&times;</button></td>
             </tr>
             `);
+            } else {
+                this_form.find('button[type=submit]').css({
+                    opacity: 1,
+                    pointerEvents: 'All',
+                });
+                this_form.find('button[type=submit]').text('Saved');
             }
         }).fail((err) => {
             console.log(err);
